@@ -7,12 +7,12 @@ const resolvers = {
         // Paramters for recolvers => parent, args, contextValue, info
         tracksForHome: (_, __, { dataSources }) => {
             return dataSources.trackAPI.getTracksForHome();
-        }
+        },
     },
 
     Track: {
         author: ({ authorId }, _, { dataSources }) => {
-            dataSources.trackAPI.getAuthor(authorId);
+            return dataSources.trackAPI.getAuthor(authorId);
         }
     }
 };
